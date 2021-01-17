@@ -17,7 +17,9 @@
   </head>
 
   <body>
-    <div class="navigation">
+    <div id="progressbar"></div>
+    <div id="scrollPath"></div>
+    <class="navigation">
       <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
 
       <label for="navi-toggle" class="navigation__button">
@@ -55,7 +57,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+    </class=>
     <header class="header">
       <div class="header__text-box">
         <h1 class="heading-primary">
@@ -706,5 +708,14 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript">
+    // following code helps in animating the scrollbar
+    let progress = document.getElementById("progressbar");
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = ()=>{
+      let progressHeight = ((window.pageYOffset)/totalHeight)*100;
+      progress.style.height = progressHeight + "%";
+    }
+    </script>
   </body>
 </html>
